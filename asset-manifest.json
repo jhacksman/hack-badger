@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/hack-badger/static/css/main.74c4a5e9.chunk.css",
-    "main.js": "/hack-badger/static/js/main.1e28b9da.chunk.js",
-    "main.js.map": "/hack-badger/static/js/main.1e28b9da.chunk.js.map",
+    "main.js": "/hack-badger/static/js/main.a0208f82.chunk.js",
+    "main.js.map": "/hack-badger/static/js/main.a0208f82.chunk.js.map",
     "runtime-main.js": "/hack-badger/static/js/runtime-main.90f57fc0.js",
     "runtime-main.js.map": "/hack-badger/static/js/runtime-main.90f57fc0.js.map",
     "static/js/2.d04a680b.chunk.js": "/hack-badger/static/js/2.d04a680b.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.90f57fc0.js",
     "static/js/2.d04a680b.chunk.js",
     "static/css/main.74c4a5e9.chunk.css",
-    "static/js/main.1e28b9da.chunk.js"
+    "static/js/main.a0208f82.chunk.js"
   ]
 }
