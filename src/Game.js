@@ -54,21 +54,50 @@ const Game = () => {
   return (
     <Box textAlign="center" p={5}>
       <Text fontSize="2xl">Current Location: {location}</Text>
-      <motion.img src={honeyBadgerSprite} alt="Honey Badger" />
+      <motion.img
+        src={honeyBadgerSprite}
+        alt="Honey Badger"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 2, loop: Infinity, ease: "linear" }}
+      />
       <Box>
         <Button onClick={generateLightbulb}>Generate Idea</Button>
         <Text>Ideas: {lightbulbs}</Text>
+        <motion.img
+          src={lightbulbSprite}
+          alt="Lightbulb"
+          animate={{ scale: [1, 1.5, 1] }}
+          transition={{ duration: 0.5, loop: Infinity, ease: "easeInOut" }}
+        />
       </Box>
       <Box>
         <Button onClick={convertToGlider} isDisabled={lightbulbs < 10}>Convert to Hacker</Button>
         <Text>Hackers: {gliders}</Text>
+        <motion.img
+          src={gliderSprite}
+          alt="Glider"
+          animate={{ x: [0, 100, 0], y: [0, -100, 0] }}
+          transition={{ duration: 1, loop: Infinity, ease: "easeInOut" }}
+        />
       </Box>
       <Box>
         <Button onClick={createHackerspace} isDisabled={gliders < 5}>Create Hackerspace (Glider Factory)</Button>
         <Text>Hackerspaces: {hackerspaces}</Text>
+        <motion.img
+          src={glidermakerSprite}
+          alt="Glidermaker"
+          animate={{ opacity: [0, 1, 0] }}
+          transition={{ duration: 1, loop: Infinity, ease: "easeInOut" }}
+        />
       </Box>
       <Box>
         <Button onClick={upgradeLocation} isDisabled={hackerspaces < 3}>Evolve Location</Button>
+        <motion.img
+          src={mothershipSprite}
+          alt="Mothership"
+          animate={{ y: [0, -50, 0] }}
+          transition={{ duration: 1, loop: Infinity, ease: "easeInOut" }}
+        />
       </Box>
     </Box>
   );
