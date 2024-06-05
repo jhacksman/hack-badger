@@ -15,17 +15,18 @@ const Game = () => {
   const [location, setLocation] = useState('basement');
 
   useEffect(() => {
-    const savedGame = Cookies.getJSON('hack_badger_game');
+    const savedGame = Cookies.get('hack_badger_game');
     if (savedGame) {
-      setLightbulbs(savedGame.lightbulbs);
-      setGliders(savedGame.gliders);
-      setHackerspaces(savedGame.hackerspaces);
-      setLocation(savedGame.location);
+      const parsedGame = JSON.parse(savedGame);
+      setLightbulbs(parsedGame.lightbulbs || 0);
+      setGliders(parsedGame.gliders || 0);
+      setHackerspaces(parsedGame.hackerspaces || 0);
+      setLocation(parsedGame.location || 'basement');
     }
   }, []);
 
   useEffect(() => {
-    Cookies.set('hack_badger_game', { lightbulbs, gliders, hackerspaces, location });
+    Cookies.set('hack_badger_game', JSON.stringify({ lightbulbs, gliders, hackerspaces, location }));
   }, [lightbulbs, gliders, hackerspaces, location]);
 
   const generateLightbulb = () => setLightbulbs(lightbulbs + 1);
