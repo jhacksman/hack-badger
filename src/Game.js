@@ -74,16 +74,18 @@ const Game = () => {
   }, [gliders]);
 
   return (
-    <div className="container">
+    <Flex direction="column" align="center" className="container">
       <h1>Current Location: {location}</h1>
-      <motion.img
-        className="sprite"
-        src={honeyBadgerSprite}
-        alt="Honey Badger"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 2, loop: Infinity, ease: "linear" }}
-      />
-      <div onClick={generateLightbulb} className="sprite" cursor="pointer">
+      <Box>
+        <motion.img
+          className="sprite"
+          src={honeyBadgerSprite}
+          alt="Honey Badger"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 2, loop: Infinity, ease: "linear" }}
+        />
+      </Box>
+      <Box onClick={generateLightbulb} cursor="pointer">
         <motion.img
           className="sprite"
           src={lightbulbSprite}
@@ -92,8 +94,8 @@ const Game = () => {
           transition={{ duration: 0.5, loop: Infinity, ease: "easeInOut" }}
         />
         <p>Ideas: {lightbulbs}</p>
-      </div>
-      <div onClick={convertToGlider} className="sprite" cursor="pointer" style={{ pointerEvents: lightbulbs < 10 ? 'none' : 'auto' }}>
+      </Box>
+      <Box onClick={convertToGlider} cursor="pointer" style={{ pointerEvents: lightbulbs < 10 ? 'none' : 'auto' }}>
         <motion.img
           className="sprite"
           src={gliderSprite}
@@ -102,8 +104,8 @@ const Game = () => {
           transition={{ duration: 1, loop: Infinity, ease: "easeInOut" }}
         />
         <p>Hackers: {gliders}</p>
-      </div>
-      <div onClick={createHackerspace} className="sprite" cursor="pointer" style={{ pointerEvents: gliders < 5 ? 'none' : 'auto' }}>
+      </Box>
+      <Box onClick={createHackerspace} cursor="pointer" style={{ pointerEvents: gliders < 5 ? 'none' : 'auto' }}>
         <motion.img
           className="sprite"
           src={glidermakerSprite}
@@ -112,8 +114,8 @@ const Game = () => {
           transition={{ duration: 1, loop: Infinity, ease: "easeInOut" }}
         />
         <p>Hackerspaces: {hackerspaces}</p>
-      </div>
-      <div onClick={upgradeLocation} className="sprite" cursor="pointer" style={{ pointerEvents: hackerspaces < 3 ? 'none' : 'auto' }}>
+      </Box>
+      <Box onClick={upgradeLocation} cursor="pointer" style={{ pointerEvents: hackerspaces < 3 ? 'none' : 'auto' }}>
         <motion.img
           className="sprite"
           src={mothershipSprite}
@@ -121,8 +123,8 @@ const Game = () => {
           animate={{ y: [0, -50, 0] }}
           transition={{ duration: 1, loop: Infinity, ease: "easeInOut" }}
         />
-      </div>
-    </div>
+      </Box>
+    </Flex>
   );
 };
 
