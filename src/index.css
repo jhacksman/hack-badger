@@ -15,14 +15,14 @@ code {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
 }
 
 p {
-  font-size: 1.2em;
+  font-size: 1.5em;
   text-align: center;
   margin: 10px 0;
 }
@@ -31,7 +31,7 @@ button {
   display: block;
   margin: 10px auto;
   padding: 10px 20px;
-  font-size: 1em;
+  font-size: 1.2em;
   cursor: pointer;
   background-color: #007bff;
   color: white;
@@ -49,7 +49,8 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
+  padding: 20px;
 }
 
 .sprite {
@@ -57,4 +58,12 @@ button:hover {
   margin: 0 auto;
   width: 32px;
   height: 32px;
+}
+
+.background {
+  background-image: url('/path/to/background-image.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
 }
