@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Box, Text } from "@chakra-ui/react";
 import Cookies from 'js-cookie';
 import { motion } from 'framer-motion';
-import honeyBadgerSprite from './assets/sprites/honey_badger_spritesheet.png';
-import lightbulbSprite from './assets/sprites/lightbulb_spritesheet.png';
-import gliderSprite from './assets/sprites/glider_spritesheet.png';
-import glidermakerSprite from './assets/sprites/glidermaker_spritesheet.png';
-import mothershipSprite from './assets/sprites/mothership_spritesheet.png';
+import honeyBadgerSprite from './assets/sprites/honey_badger.png';
+import lightbulbSprite from './assets/sprites/lightbulb.png';
+import gliderSprite from './assets/sprites/glider.png';
+import glidermakerSprite from './assets/sprites/glidermaker.png';
+import mothershipSprite from './assets/sprites/mothership.png';
 
 console.log('Honey Badger Sprite:', honeyBadgerSprite);
 console.log('Lightbulb Sprite:', lightbulbSprite);
