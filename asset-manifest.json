@@ -1,15 +1,20 @@
 {
   "files": {
-    "main.css": "/hack-badger/static/css/main.f4f3298f.css",
-    "main.js": "/hack-badger/static/js/main.80141f79.js",
-    "static/js/488.121a6a0a.chunk.js": "/hack-badger/static/js/488.121a6a0a.chunk.js",
+    "main.css": "/hack-badger/static/css/main.34235b26.chunk.css",
+    "main.js": "/hack-badger/static/js/main.6a1576d7.chunk.js",
+    "main.js.map": "/hack-badger/static/js/main.6a1576d7.chunk.js.map",
+    "runtime-main.js": "/hack-badger/static/js/runtime-main.dbe11304.js",
+    "runtime-main.js.map": "/hack-badger/static/js/runtime-main.dbe11304.js.map",
+    "static/js/2.636be55e.chunk.js": "/hack-badger/static/js/2.636be55e.chunk.js",
+    "static/js/2.636be55e.chunk.js.map": "/hack-badger/static/js/2.636be55e.chunk.js.map",
     "index.html": "/hack-badger/index.html",
-    "main.f4f3298f.css.map": "/hack-badger/static/css/main.f4f3298f.css.map",
-    "main.80141f79.js.map": "/hack-badger/static/js/main.80141f79.js.map",
-    "488.121a6a0a.chunk.js.map": "/hack-badger/static/js/488.121a6a0a.chunk.js.map"
+    "static/css/main.34235b26.chunk.css.map": "/hack-badger/static/css/main.34235b26.chunk.css.map",
+    "static/js/2.636be55e.chunk.js.LICENSE.txt": "/hack-badger/static/js/2.636be55e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/css/main.f4f3298f.css",
-    "static/js/main.80141f79.js"
+    "static/js/runtime-main.dbe11304.js",
+    "static/js/2.636be55e.chunk.js",
+    "static/css/main.34235b26.chunk.css",
+    "static/js/main.6a1576d7.chunk.js"
   ]
 }
