@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import Cookies from 'js-cookie';
 import { motion } from 'framer-motion';
 import honeyBadgerSprite from './assets/sprites/honey_badger.png';
@@ -7,6 +7,12 @@ import lightbulbSprite from './assets/sprites/lightbulb.png';
 import gliderSprite from './assets/sprites/glider.png';
 import glidermakerSprite from './assets/sprites/glidermaker.png';
 import mothershipSprite from './assets/sprites/mothership.png';
+
+console.log('Honey Badger Sprite:', honeyBadgerSprite);
+console.log('Lightbulb Sprite:', lightbulbSprite);
+console.log('Glider Sprite:', gliderSprite);
+console.log('Glidermaker Sprite:', glidermakerSprite);
+console.log('Mothership Sprite:', mothershipSprite);
 
 const Game = () => {
   const [lightbulbs, setLightbulbs] = useState(0);
@@ -61,38 +67,38 @@ const Game = () => {
         animate={{ rotate: 360 }}
         transition={{ duration: 2, loop: Infinity, ease: "linear" }}
       />
-      <Box>
-        <Button onClick={generateLightbulb}>Generate Idea</Button>
-        <Text>Ideas: {lightbulbs}</Text>
+      <Box onClick={generateLightbulb} cursor="pointer">
+        <Text>Click the laptop to generate ideas</Text>
         <motion.img
           src={lightbulbSprite}
           alt="Lightbulb"
           animate={{ scale: [1, 1.5, 1] }}
           transition={{ duration: 0.5, loop: Infinity, ease: "easeInOut" }}
         />
+        <Text>Ideas: {lightbulbs}</Text>
       </Box>
-      <Box>
-        <Button onClick={convertToGlider} isDisabled={lightbulbs < 10}>Convert to Hacker</Button>
-        <Text>Hackers: {gliders}</Text>
+      <Box onClick={convertToGlider} cursor="pointer" isDisabled={lightbulbs < 10}>
+        <Text>Click to convert ideas to hackers</Text>
         <motion.img
           src={gliderSprite}
           alt="Glider"
           animate={{ x: [0, 100, 0], y: [0, -100, 0] }}
           transition={{ duration: 1, loop: Infinity, ease: "easeInOut" }}
         />
+        <Text>Hackers: {gliders}</Text>
       </Box>
-      <Box>
-        <Button onClick={createHackerspace} isDisabled={gliders < 5}>Create Hackerspace (Glider Factory)</Button>
-        <Text>Hackerspaces: {hackerspaces}</Text>
+      <Box onClick={createHackerspace} cursor="pointer" isDisabled={gliders < 5}>
+        <Text>Click to create a hackerspace</Text>
         <motion.img
           src={glidermakerSprite}
           alt="Glidermaker"
           animate={{ opacity: [0, 1, 0] }}
           transition={{ duration: 1, loop: Infinity, ease: "easeInOut" }}
         />
+        <Text>Hackerspaces: {hackerspaces}</Text>
       </Box>
-      <Box>
-        <Button onClick={upgradeLocation} isDisabled={hackerspaces < 3}>Evolve Location</Button>
+      <Box onClick={upgradeLocation} cursor="pointer" isDisabled={hackerspaces < 3}>
+        <Text>Click to evolve location</Text>
         <motion.img
           src={mothershipSprite}
           alt="Mothership"
