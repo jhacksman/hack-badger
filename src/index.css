@@ -61,7 +61,6 @@ button:hover {
 }
 
 .background {
-  background-image: url('/path/to/background-image.png');
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -73,10 +72,43 @@ button:hover {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .labels {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.text-element {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1.2em;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  width: 80%;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1.5em;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+
+  .text-element {
+    font-size: 1em;
+    padding: 8px;
+  }
 }
