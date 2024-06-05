@@ -35,19 +35,26 @@ const Game = () => {
     Cookies.set('hack_badger_game', JSON.stringify({ lightbulbs, gliders, hackerspaces, location }));
   }, [lightbulbs, gliders, hackerspaces, location]);
 
+  // Function to generate lightbulbs
   const generateLightbulb = () => setLightbulbs(lightbulbs + 1);
+
+  // Function to convert lightbulbs to gliders
   const convertToGlider = () => {
     if (lightbulbs >= 10) {
       setLightbulbs(lightbulbs - 10);
       setGliders(gliders + 1);
     }
   };
+
+  // Function to create hackerspaces
   const createHackerspace = () => {
     if (gliders >= 5) {
       setGliders(gliders - 5);
       setHackerspaces(hackerspaces + 1);
     }
   };
+
+  // Function to upgrade location
   const upgradeLocation = () => {
     if (hackerspaces >= 3) {
       setHackerspaces(hackerspaces - 3);
@@ -57,6 +64,14 @@ const Game = () => {
       else if (location === 'hackerspace') setLocation('mothership');
     }
   };
+
+  // Simulate lightbulb generation by gliders
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLightbulbs(prevLightbulbs => prevLightbulbs + gliders);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [gliders]);
 
   return (
     <Box textAlign="center" p={5}>
@@ -78,7 +93,7 @@ const Game = () => {
         <Text>Ideas: {lightbulbs}</Text>
       </Box>
       <Box onClick={convertToGlider} cursor="pointer" isDisabled={lightbulbs < 10}>
-        <Text>Click to convert ideas to hackers</Text>
+        <Text>Click the glider to convert ideas to hackers</Text>
         <motion.img
           src={gliderSprite}
           alt="Glider"
@@ -88,7 +103,7 @@ const Game = () => {
         <Text>Hackers: {gliders}</Text>
       </Box>
       <Box onClick={createHackerspace} cursor="pointer" isDisabled={gliders < 5}>
-        <Text>Click to create a hackerspace</Text>
+        <Text>Click the glidermaker to create a hackerspace</Text>
         <motion.img
           src={glidermakerSprite}
           alt="Glidermaker"
@@ -98,7 +113,7 @@ const Game = () => {
         <Text>Hackerspaces: {hackerspaces}</Text>
       </Box>
       <Box onClick={upgradeLocation} cursor="pointer" isDisabled={hackerspaces < 3}>
-        <Text>Click to evolve location</Text>
+        <Text>Click the mothership to evolve location</Text>
         <motion.img
           src={mothershipSprite}
           alt="Mothership"
