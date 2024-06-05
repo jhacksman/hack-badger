@@ -83,17 +83,15 @@ const Game = () => {
         transition={{ duration: 2, loop: Infinity, ease: "linear" }}
       />
       <Box onClick={generateLightbulb} cursor="pointer">
-        <Text>Click the laptop to generate ideas</Text>
         <motion.img
           src={lightbulbSprite}
-          alt="Lightbulb"
+          alt="Laptop"
           animate={{ scale: [1, 1.5, 1] }}
           transition={{ duration: 0.5, loop: Infinity, ease: "easeInOut" }}
         />
         <Text>Ideas: {lightbulbs}</Text>
       </Box>
-      <Box onClick={convertToGlider} cursor="pointer" isDisabled={lightbulbs < 10}>
-        <Text>Click the glider to convert ideas to hackers</Text>
+      <Box onClick={convertToGlider} cursor="pointer" style={{ pointerEvents: lightbulbs < 10 ? 'none' : 'auto' }}>
         <motion.img
           src={gliderSprite}
           alt="Glider"
@@ -102,8 +100,7 @@ const Game = () => {
         />
         <Text>Hackers: {gliders}</Text>
       </Box>
-      <Box onClick={createHackerspace} cursor="pointer" isDisabled={gliders < 5}>
-        <Text>Click the glidermaker to create a hackerspace</Text>
+      <Box onClick={createHackerspace} cursor="pointer" style={{ pointerEvents: gliders < 5 ? 'none' : 'auto' }}>
         <motion.img
           src={glidermakerSprite}
           alt="Glidermaker"
@@ -112,8 +109,7 @@ const Game = () => {
         />
         <Text>Hackerspaces: {hackerspaces}</Text>
       </Box>
-      <Box onClick={upgradeLocation} cursor="pointer" isDisabled={hackerspaces < 3}>
-        <Text>Click the mothership to evolve location</Text>
+      <Box onClick={upgradeLocation} cursor="pointer" style={{ pointerEvents: hackerspaces < 3 ? 'none' : 'auto' }}>
         <motion.img
           src={mothershipSprite}
           alt="Mothership"
